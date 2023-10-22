@@ -1,10 +1,13 @@
 from flask import Flask, jsonify, request
 from mkdisk import mkdisk, fdisk
+from mount import mount, unmount
 import time
 from flask_cors import CORS
 #202107190ubuntu
 app = Flask(__name__)
 CORS(app)
+usuarios_montados = [] 
+cont=0
 @staticmethod
 def procesar_comando(comando):
     datos = {} 
@@ -209,6 +212,7 @@ def obtener_productos():
 @app.route('/execute', methods=['POST'])
 
 def get_first_word():
+    global cont
     data = request.get_json()
     message = data.get('command', '')
 
@@ -223,10 +227,17 @@ def get_first_word():
         if "size" in coamando:
             coamando["size"]=int(coamando["size"])  
         text = fdisk(coamando)
-        
-# mkdisk -size=3000 -unit=K -path=/home/daniel/Escritorio/MIAP2_202107190/p.dk
-# fdisk -type=P -unit=M -name=Part1 -size=15 -path=/home/daniel/Escritorio/MIAP2_202107190/p.dk
-   # print(words)
+    elif opcion == 5:
+        text = mount(coamando,usuarios_montados,cont)
+        cont=cont+1
+
+
+    elif opcion == 6:
+        text=unmount(coamando,usuarios_montados)
+#mkdisk -size=3000 -unit=K -path=/home/daniel/Escritorio/MIAP2_202107190/p.dk
+#fdisk -type=P -unit=M -name=Part1 -size=15 -path=/home/daniel/Escritorio/MIAP2_202107190/p.dk
+#mount -path=/home/daniel/Escritorio/MIAP1_202107190/p.dk -name=Part1
+# print(words)
    #  if words:
     #     message = f'[Success] => comando {words[0]} ejecutado exitosamente'+f'[extra] => comando {words}'
    #  else:
