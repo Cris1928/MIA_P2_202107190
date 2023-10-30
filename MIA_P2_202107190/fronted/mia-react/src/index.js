@@ -1,17 +1,82 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import * as React from "react";
+import * as ReactDOM from "react-dom/client";
+import { createBrowserRouter, RouterProvider, Route } from "react-router-dom";
+import "./index.css";
+import Nav from './componentes/navbar';
+import Card from './componentes/card';
+import Reports_Card from './componentes/reports';
+import No_Access from './componentes/no_access';
+import Modal from './componentes/modal';
+import { global }  from './componentes/modal';
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
+function Home() {
+  return (
+    <div>
+      <Nav />
+      <div className='container'>
+        <Card />
+      </div>
+     
+    </div>
+  );
+}
+
+function Reports() {
+  console.log("window.isLoggedIn")
+  console.log(global)
+  if(global){
+    return (
+      <div>
+        <Nav />
+        <div className='container'>
+          <Reports_Card />
+        </div>
+       
+      </div>
+    );
+  } else {
+    return (
+      <div>
+        <Nav />
+        <div className='container'>
+          <No_Access />
+        </div>
+     
+      </div>
+    );
+  }
+}
+function Loginn() {
+  return (
+    <div>
+   
+      <Modal />
+    </div>
+  );
+}
+
+
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element:<Home/>,
+  },
+  {
+    path: "/reports",
+    element:<Reports/>,
+  },
+  {
+    path: "/login",
+    element:<Loginn/>,
+  },
+
+]);
+
+ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <App />
+    <RouterProvider router={router} />
   </React.StrictMode>
 );
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+export default router;

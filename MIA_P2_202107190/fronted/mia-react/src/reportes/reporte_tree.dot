@@ -1,0 +1,121 @@
+digraph G {
+
+subgraph cluster_Inode51981{ label = "Inode51981"; color=blue; style=filled; fillcolor=lightblue; 
+
+1 [label=<<TABLE BORDER="0" CELLBORDER="2" CELLSPACING="0" CELLPADDING="5">
+<TR>
+   <TD>Reporte_mbr</TD>
+   <TD> </TD>
+</TR>
+<TR>
+<TD>i_uid</TD>
+<TD>0</TD>
+</TR>
+<TR>
+<TD>I_gid</TD>
+<TD>0</TD>
+</TR>
+<TR>
+<TD>i_s</TD>
+<TD>0</TD>
+</TR>
+<TR>
+<TD>i_atime</TD>
+<TD>1698632100.9256275</TD>
+</TR>
+<TR>
+<TD>i_ctime</TD>
+<TD>1698632100.92563</TD>
+</TR>
+<TR>
+<TD>i_mtime</TD>
+<TD>1698632100.9256322</TD>
+</TR>
+<TR>
+<TD>i_type</TD>
+<TD>0</TD>
+</TR>
+<TR>
+<TD>i_perm</TD>
+<TD>0</TD>
+</TR>
+</TABLE>>shape=box];
+
+ node [shape=record];
+ bloques1 [label = "{<content0> 1448853|<content1> -1|<content2> -1|<content3> -1|<content4> -1|<content5> -1|<content6> -1|<content7> -1|<content8> -1|<content9> -1|<content10> -1|<content11> -1|<content12> -1|<content13> -1|<content14> -1|
+}"];
+}
+subgraph cluster_FolderBlock1448853{ label = "FolderBlock1448853"; color=blue; style=filled; fillcolor=lightblue; 
+
+ node [shape=record];
+ bloques2 [label = "{<content0> Name: users.txt
+ Inode: 52089|<content1> Name: name_t
+ Inode: -1|<content2> Name: name_t
+ Inode: -1|<content3> Name: name_t
+ Inode: -1|
+}"];
+}
+subgraph cluster_Inode52089{ label = "Inode52089"; color=blue; style=filled; fillcolor=lightblue; 
+
+3 [label=<<TABLE BORDER="0" CELLBORDER="2" CELLSPACING="0" CELLPADDING="5">
+<TR>
+   <TD>Reporte_mbr</TD>
+   <TD> </TD>
+</TR>
+<TR>
+<TD>i_uid</TD>
+<TD>0</TD>
+</TR>
+<TR>
+<TD>I_gid</TD>
+<TD>0</TD>
+</TR>
+<TR>
+<TD>i_s</TD>
+<TD>0</TD>
+</TR>
+<TR>
+<TD>i_atime</TD>
+<TD>1698632100.9257646</TD>
+</TR>
+<TR>
+<TD>i_ctime</TD>
+<TD>1698632100.925767</TD>
+</TR>
+<TR>
+<TD>i_mtime</TD>
+<TD>1698632100.9257689</TD>
+</TR>
+<TR>
+<TD>i_type</TD>
+<TD>1</TD>
+</TR>
+<TR>
+<TD>i_perm</TD>
+<TD>0</TD>
+</TR>
+</TABLE>>shape=box];
+
+ node [shape=record];
+ bloques3 [label = "{<content0> 1448917|<content1> -1|<content2> -1|<content3> -1|<content4> -1|<content5> -1|<content6> -1|<content7> -1|<content8> -1|<content9> -1|<content10> -1|<content11> -1|<content12> -1|<content13> -1|<content14> -1|
+}"];
+}
+subgraph cluster_FileBlock1448917{ label = "FileBlock1448917"; color=blue; style=filled; fillcolor=lightblue; 
+
+4 [label=<<TABLE BORDER="0" CELLBORDER="2" CELLSPACING="0" CELLPADDING="5">
+<TR>
+   <TD>Reporte_mbr</TD>
+   <TD> </TD>
+</TR>
+<TR>
+<TD>b_content</TD>
+<TD>1,G,root<BR/>1,U,root,root,123<BR/></TD>
+</TR>
+</TABLE>>shape=box];
+
+}
+bloques3:<content0> -> 4
+bloques2:<content0> -> 3
+bloques1:<content0> -> bloques2
+home -> 1
+}

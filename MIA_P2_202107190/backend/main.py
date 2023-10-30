@@ -2,9 +2,11 @@ from flask import Flask, jsonify, request
 from mkdisk import mkdisk, fdisk
 from FORMATEO.ext2.ext2 import Superblock, Inode,Journal
 from mount import mount, unmount
-from mkfs import mkfs,login
+from mkfs import mkfs,login,makegroup,makeuser,remgroup,remuser
+from mkfile import mkfile, cat,remove, rename,copy, move, find
 from journal import add_j
 import time
+from reporte import rep
 from ress import publi
 import math
 from flask_cors import CORS
@@ -17,7 +19,7 @@ usuarios_montados = []
 cont=0
 mbytes = []
 contMb= 0
-
+contador_r=0
 usuarios = None
 part_act=None
 @staticmethod
@@ -131,7 +133,7 @@ def procesar_comando(comando):
                 parametro, valor = parametro_actual.split("=")
                 datos[parametro] = valor
         return datos,comand
-                
+            
     elif comando.startswith("fdisk"):
         comand=4
         partes = comando.split()
@@ -282,6 +284,83 @@ def procesar_comando(comando):
                 datos[parametro] = valor
         return datos,comand    
             
+    elif comando.startswith("mkfile"):
+        comand=17
+        partes = comando.split()
+        parametro_actual = None
+        for palabra in partes:
+            if palabra.startswith("-"):
+                parametro_actual = palabra[1:]
+                parametro, valor = parametro_actual.split("=")
+                datos[parametro] = valor
+        return datos,comand    
+
+    elif comando.startswith("cat"):
+        comand=18
+        partes = comando.split()
+        parametro_actual = None
+        for palabra in partes:
+            if palabra.startswith("-"):
+                parametro_actual = palabra[1:]
+                parametro, valor = parametro_actual.split("=")
+                datos[parametro] = valor
+        return datos,comand  
+    
+    elif comando.startswith("remove"):
+        comand=19
+        partes = comando.split()
+        parametro_actual = None
+        for palabra in partes:
+            if palabra.startswith("-"):
+                parametro_actual = palabra[1:]
+                parametro, valor = parametro_actual.split("=")
+                datos[parametro] = valor
+        return datos,comand  
+    
+    elif comando.startswith("rename"):
+        comand=20
+        partes = comando.split()
+        parametro_actual = None
+        for palabra in partes:
+            if palabra.startswith("-"):
+                parametro_actual = palabra[1:]
+                parametro, valor = parametro_actual.split("=")
+                datos[parametro] = valor
+        return datos,comand  
+
+    elif comando.startswith("copy"):
+        comand=21
+        partes = comando.split()
+        parametro_actual = None
+        for palabra in partes:
+            if palabra.startswith("-"):
+                parametro_actual = palabra[1:]
+                parametro, valor = parametro_actual.split("=")
+                datos[parametro] = valor
+        return datos,comand  
+    elif comando.startswith("find"):
+        comand=22
+        partes = comando.split()
+        parametro_actual = None
+        for palabra in partes:
+            if palabra.startswith("-"):
+                parametro_actual = palabra[1:]
+                parametro, valor = parametro_actual.split("=")
+                datos[parametro] = valor
+        return datos,comand  
+    elif comando.startswith("move"):
+        comand=23
+        partes = comando.split()
+        parametro_actual = None
+        for palabra in partes:
+            if palabra.startswith("-"):
+                parametro_actual = palabra[1:]
+                parametro, valor = parametro_actual.split("=")
+                datos[parametro] = valor
+        return datos,comand  
+
+
+
 
     return None,None
 respuesta ={
@@ -297,6 +376,8 @@ def obtener_productos():
 
 def get_first_word():
     global cont
+    global part_act
+    global usuarios
     data = request.get_json()
     message = data.get('command', '')
 
@@ -307,6 +388,13 @@ def get_first_word():
     print(opcion)
     if opcion==1:
         text = mkdisk(coamando)
+    elif opcion ==3:
+        global contador_r
+        text=""
+        rep(coamando,usuarios_montados, mbytes,contador_r)
+        text = text + publi.ress 
+        contador_r=contador_r+1
+
     elif opcion == 4:
         if "size" in coamando:
             coamando["size"]=int(coamando["size"])  
@@ -321,8 +409,10 @@ def get_first_word():
 
     elif opcion ==8:
         text=mkfs(coamando, usuarios_montados)
+        add_j(usuarios_montados,part_act,str(( "mkfs",coamando)))
+        text = text + publi.ress
     elif opcion ==9:
-        global usuarios
+        
         
 
         usuarios,part_act,text= login(coamando,usuarios_montados)
@@ -331,9 +421,118 @@ def get_first_word():
         text=text + publi.ress
         add_j(usuarios_montados,part_act,str(("login",coamando)))
         text=text + publi.ress
+    elif opcion==10:
+        
+        if usuarios is not None:
+            ex = usuarios
+            usuarios=None
+            part_act=None
+        else:
+            
+            print("no hay usuario logeado")
+        add_j(usuarios_montados,part_act,str(( "logout",{})))
+    elif opcion == 11:
+        text=makegroup(coamando,usuarios_montados,part_act)
+        bitMaps("mkgrp"+str(coamando), usuarios_montados, part_act)
+        add_j(usuarios_montados,part_act,str(( "mkgrp",coamando)))
+    elif opcion == 12:
+        text=makeuser(coamando,usuarios_montados,part_act)
+        bitMaps("mkusr"+str(coamando), usuarios_montados, part_act)
+        add_j(usuarios_montados,part_act,str(( "mkuser",coamando)))
+    elif opcion ==15:
+        text=remuser(coamando,usuarios_montados,part_act)
+        bitMaps("rmusr"+str(coamando), usuarios_montados, part_act)
+        add_j(usuarios_montados, part_act,str(( "rmuser", coamando)))
+    elif opcion ==16:
+    
+        text=remgroup(coamando,usuarios_montados,part_act)
+        bitMaps("rmgrp"+str(coamando), usuarios_montados, part_act)
+        add_j(usuarios_montados,part_act,str(( "rmgrp", coamando)))
+
+    elif opcion == 17:
+        if usuarios != None:
+            text=""
+            mkfile(coamando,usuarios_montados,part_act,usuarios)
+            text=text + publi.ress
+            bitMaps("mkfile"+str(coamando),usuarios_montados,part_act)
+            text=text + publi.ress
+            add_j(usuarios_montados, part_act,str(( "mkfile", coamando)))
+            text=text + publi.ress
+        else:
+            text="\nError: no hay usuario logeado"
+    
+    elif opcion == 18:
+        if usuarios != None:
+            text=""
+            cat(coamando,usuarios_montados,part_act,usuarios)
+            text=text + publi.ress
+ 
+        else:
+            text="\nError: no hay usuario logeado"
+
+    elif opcion == 19:
+        if usuarios != None:
+            text=""
+            remove(coamando,usuarios_montados,part_act,usuarios)
+            text=text + publi.ress
+            bitMaps("remove"+str(coamando),usuarios_montados,part_act)
+            text=text + publi.ress
+            add_j(usuarios_montados, part_act,str(( "remove", coamando)))
+            text=text + publi.ress
+        else:
+            text="\nError: no hay usuario logeado"
+    elif opcion == 20:
+        if usuarios != None:
+            text=""
+            rename(coamando,usuarios_montados,part_act,usuarios)
+            text=text + publi.ress
+            bitMaps("rename"+str(coamando),usuarios_montados,part_act)
+            text=text + publi.ress
+            add_j(usuarios_montados, part_act,str(( "rename", coamando)))
+            text=text + publi.ress
+        else:
+            text="\nError: no hay usuario logeado"
+
+
+    elif opcion == 21:
+        if usuarios != None:
+            text=""
+            copy(coamando,usuarios_montados,part_act,usuarios)
+            text=text + publi.ress
+            bitMaps("copy"+str(coamando),usuarios_montados,part_act)
+            text=text + publi.ress
+            add_j(usuarios_montados, part_act,str(( "copy", coamando)))
+            text=text + publi.ress
+        else:
+            text="\nError: no hay usuario logeado"
+
+    elif opcion == 22:
+        if usuarios != None:
+            text=""
+            find(coamando,usuarios_montados,part_act,usuarios)
+            text=text + publi.ress
+          
+        else:
+            text="\nError: no hay usuario logeado"
+    elif opcion == 23:
+        if usuarios != None:
+            text=""
+            move(coamando,usuarios_montados,part_act,usuarios)
+            text=text + publi.ress
+            bitMaps("move"+str(coamando),usuarios_montados,part_act)
+            text=text + publi.ress
+            add_j(usuarios_montados, part_act,str(( "move", coamando)))
+            text=text + publi.ress
+        else:
+            text="\nError: no hay usuario logeado"
+
+    else:
+        text="\ncomando no valido"
+   
+
 #mkdisk -size=3000 -unit=K -path=/home/daniel/Escritorio/MIAP2_202107190/p.dk
 #fdisk -type=P -unit=M -name=Part1 -size=15 -path=/home/daniel/Escritorio/MIAP2_202107190/p.dk
-#mount -path=/home/daniel/Escritorio/MIAP1_202107190/p.dk -name=Part1
+#mount -path=/home/daniel/Escritorio/MIAP2_202107190/p.dk -name=Part1
 # print(words)
    #  if words:
     #     message = f'[Success] => comando {words[0]} ejecutado exitosamente'+f'[extra] => comando {words}'

@@ -1,0 +1,9 @@
+#MOUNT
+mount -path=/home/daniel/Escritorio/MIAP1_202107190/tmp/d1.dsk -name=Part1
+mount -path=/home/daniel/Escritorio/MIAP1_202107190/tmp/d2.dsk -name=Part1
+mount -path=/home/daniel/Escritorio/MIAP1_202107190/tmp/d3.dsk -name=Part1
+
+######rep -id=190Disco0 -path=/home/parte1/particiones/d1.jpg -name=disk ##reporte disk del estado inicial de las particiones
+rep -id=190Disco0 -path=/home/parte1/particiones/d1.dsk -name=disk #id XX1d1
+rep -id=190Disco1 -path=/home/parte1/particiones/d2.dsk -name=disk #id XX1d2
+rep -id=190Disco2 -path=/home/parte1/particiones/d3.dsk -name=disk #id XX1d3

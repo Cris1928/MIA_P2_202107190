@@ -50,6 +50,7 @@ def mount(params, mounted_partitions,cont):
     
 #aqui se crea el disco
 def unmount(params, mounted_partitions):
+    publi.ress="publi.ress=publi.ress"
     id_to_unmount = params.get('id')
     
     for index, partition_dict in enumerate(mounted_partitions):

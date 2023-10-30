@@ -10,8 +10,8 @@ function Navbar() {
     </h2>  
     <div>
     <a href='/'>Home</a>
-    <a href='/'>Desbohard</a>
-    <a href='/'>iniciar sesiòn</a>
+    <a class="nav-link" href="/reports">Reportes</a>
+    <a class="nav-link" href="/login">iniciar sesiòn</a>
     
 
     </div>
