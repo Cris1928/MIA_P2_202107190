@@ -224,7 +224,7 @@ def busca_en_todo_el_sistema(file,byte,tipo,texto,x,contador):
             if n.b_inodo == -1:
                 continue
             if n.b_name.rstrip('\x00') == x:
-                texto += tabs+"|_"+n.b_name.rstrip('\x00') +"  <---------🔎"+"\n"
+                texto += tabs+"|_"+n.b_name.rstrip('\x00') +"  <---------"+"\n"
                 texto_de_find = texto
                 return
             texto += tabs+"|_"+n.b_name.rstrip('\x00') +"\n"
@@ -261,7 +261,7 @@ def busca_en_todo_el_sistema_regex(file, byte, tipo, texto, x, contador):
             if regex:
                 match = regex.match(n.b_name.rstrip('\x00'))
                 if match:
-                    texto += tabs + "|_" + n.b_name.rstrip('\x00') + "  <---------🔎" + "\n"
+                    texto += tabs + "|_" + n.b_name.rstrip('\x00') + "  <---------" + "\n"
                     continue
     
             texto += tabs + "|_" + n.b_name.rstrip('\x00') + "\n"
@@ -359,8 +359,8 @@ def get_file_content(partial_path):
 def mkfile(params, mounted_partitions,id, usuario_actual):
     UID = usuario_actual['id']
     GID = UID
-   # print(f'📜 <<RUNNING MAKE-FILE {params} _ _ _ _ _ _ _ _ _ ')
-    publi.ress = publi.ress +f'📜 <<RUNNING MAKE-FILE {params} _ _ _ _ _ _ _ _ _ '
+   # print(f'📜 <<EJECUTANDO MAKE-FILE {params}   ')
+    publi.ress = publi.ress +f'📜 <<EJECUTANDO MAKE-FILE {params}   '
     if id == None:
         #print("\nError: Se necesita el id.")
         publi.ress = publi.ress +"\nError: Se necesita el id."
@@ -374,8 +374,8 @@ def mkfile(params, mounted_partitions,id, usuario_actual):
             archivocont = get_file_content(archivocont)
             #print(archivocont)
     except:
-        #print("\nError: The user, password and group are required.")
-        publi.ress = publi.ress +"\nError: The user, password and group are required."
+        #print("\nError: El usuario, contraseña y grupo son requeridos.")
+        publi.ress = publi.ress +"\nError: El usuario, contraseña y grupo son requeridos."
         return
     partition = None
     for partition_dict in mounted_partitions:
@@ -409,7 +409,7 @@ def mkfile(params, mounted_partitions,id, usuario_actual):
         file.seek(inicio)
         superblock = Superblock.unpack(file.read(Superblock.SIZE))
         lista_direcciones = insidepath.split('/')[1:]
-        ##########################################################
+          
         #print(lista_direcciones)
         PI = superblock.s_inode_start
         newI = -1
@@ -428,7 +428,7 @@ def mkfile(params, mounted_partitions,id, usuario_actual):
             #print(f'\narchivo {insidepath} ya existe')
             publi.ress = publi.ress + f'\narchivo {insidepath} ya existe'
             return
-        ##########################################################
+          
         else:
             
             nueva_lista_dirercciones = lista_direcciones[newI:]
@@ -671,8 +671,8 @@ def mkfile(params, mounted_partitions,id, usuario_actual):
                 
 def cat(params, mounted_partitions,id, usuario_actual): 
     #publi.ress = "
-    #print(f'🐈 <<RUNNING CAT {params} _ _ _ _ _ _ _ _ _ ')
-    publi.ress = publi.ress +f'<<RUNNING CAT {params} _ _ _ _ _ _ _ _ _ '
+    #print(f'🐈 <<EJECUTANDO CAT {params}   ')
+    publi.ress = publi.ress +f'<<EJECUTANDO CAT {params}   '
     if id == None:
         #print("\nError: Se necesita el id.")
         publi.ress = publi.ress +"\nError: Se necesita el id."
@@ -726,7 +726,7 @@ def cat(params, mounted_partitions,id, usuario_actual):
             #print(f'\n\nCAT DE {insidepath} ')
             publi.ress = publi.ress +f'\n\nCAT DE {insidepath} '
             lista_direcciones = insidepath.split('/')[1:]
-            ##########################################################
+              
             PI = superblock.s_inode_start
             newI = -1
             for i,n in enumerate(lista_direcciones):
@@ -739,8 +739,8 @@ def cat(params, mounted_partitions,id, usuario_actual):
                     newI = i
                     return
             if newI == -1:
-               # print("#############################################")
-                publi.ress = publi.ress +"#############################################"
+               # print("**********************************************")
+                publi.ress = publi.ress +"**********************************************"
                # print(f'\narchivo {insidepath} ya existe')
                 publi.ress = publi.ress +f'\narchivo {insidepath} ya existe'
                # print(f'byte del inodo {PI}')
@@ -750,8 +750,8 @@ def cat(params, mounted_partitions,id, usuario_actual):
                 #print(inodo)
                 publi.ress = publi.ress + str(inodo)
                 #print(inodo.i_block)
-                #print("#############################################")
-                publi.ress = publi.ress +"#############################################"
+                #print("**********************************************")
+                publi.ress = publi.ress +"**********************************************"
                 texto = ''
                 for n in inodo.i_block:
                     if n == -1:
@@ -761,16 +761,16 @@ def cat(params, mounted_partitions,id, usuario_actual):
                     texto +=bloque.b_content.strip('\x00')
                 #print(texto)
                 publi.ress = publi.ress + str(texto)
-                #print("#############################################")
-                publi.ress = publi.ress +"#############################################"
+                #print("**********************************************")
+                publi.ress = publi.ress +"**********************************************"
                 
                 
-            ##########################################################
+              
     
 def remove(params, mounted_partitions,id, usuario_actual): 
     #publi.ress = " 
-    ##print(f'💀 <<RUNNING REMOVE {params} _ _ _ _ _ _ _ _ _ ')
-    publi.ress = publi.ress +f'💀 <<RUNNING REMOVE {params} _ _ _ _ _ _ _ _ _ '
+    ##print(f'💀 <<EJECUTANDO REMOVE {params}   ')
+    publi.ress = publi.ress +f'💀 <<EJECUTANDO REMOVE {params}   '
     if id == None:
        # print("\nError: Se necesita el id.")
         publi.ress = publi.ress +"\nError: Se necesita el id."
@@ -854,8 +854,8 @@ def remove(params, mounted_partitions,id, usuario_actual):
     
         
 def rename(params, mounted_partitions,id, usuario_actual):  
-   # print(f'🏳️ <<RUNNING RENAME {params} _ _ _ _ _ _ _ _ _ ')
-    publi.ress = publi.ress +f'🏳️ <<RUNNING RENAME {params} _ _ _ _ _ _ _ _ _ '
+   # print(f'🏳️ <<EJECUTANDO RENAME {params}   ')
+    publi.ress = publi.ress +f'🏳️ <<EJECUTANDO RENAME {params}   '
     if id == None:
         #print("\nError: Se necesita el id.")
         publi.ress = publi.ress +"\nError: Se necesita el id."
@@ -910,7 +910,7 @@ def rename(params, mounted_partitions,id, usuario_actual):
                 print(f'\narchivo {insidepath} no existe')
                 return
 def copy(params, mounted_partitions,id, usuario_actual):  
-    print(f'🏳️ <<RUNNING COPY {params} _ _ _ _ _ _ _ _ _ ')
+    print(f'🏳️ <<EJECUTANDO COPY {params}   ')
     if id == None:
         #print("\nError: Se necesita el id.")
         publi.ress = publi.ress +"\nError: Se necesita el id."
@@ -1004,8 +1004,8 @@ def copy(params, mounted_partitions,id, usuario_actual):
             publi.ress = publi.ress +f'\narchivo {insidepath} copiado a {destinypath}'
             
 def move(params, mounted_partitions,id, usuario_actual):  
-    #print(f'🚀 <<RUNNING MOVE {params} _ _ _ _ _ _ _ _ _ ')
-    publi.ress = publi.ress +f'🚀 <<RUNNING MOVE {params} _ _ _ _ _ _ _ _ _ '
+    #print(f'🚀 <<EJECUTANDO MOVE {params}   ')
+    publi.ress = publi.ress +f'🚀 <<EJECUTANDO MOVE {params}   '
     if id == None:
         #print("\nError: Se necesita el id.")
         publi.ress = publi.ress +"\nError: Se necesita el id."
@@ -1102,9 +1102,9 @@ def move(params, mounted_partitions,id, usuario_actual):
             publi.ress = publi.ress +f'\narchivo {insidepath} movido a {destinypath}'
 def find(params, mounted_partitions,id, usuario_actual):  
     #publi.ress = "
-   # print(f'🔍 <<RUNNING FIND {params} _ _ _ _ _ _ _ _ _ ')
-    publi.ress = publi.ress +f' <<RUNNING FIND {params} _ _ _ _ _ _ _ _ _ '
-   # print(f'\n\n🔻____________________________________\n')
+   # print(f'🔍 <<EJECUTANDO FIND {params}   ')
+    publi.ress = publi.ress +f' <<EJECUTANDO FIND {params}   '
+   # print(f'\n\n____________________________________\n')
     publi.ress = publi.ress +f'\n\n____________________________________\n'
     if id == None:
         #print("\nError: Se necesita el id.")
@@ -1177,8 +1177,4 @@ def find(params, mounted_partitions,id, usuario_actual):
           publi.ress = publi.ress +f'\nno se encontro el archivo {name} en la carpeta {insidepath}'
         else:
             publi.ress = publi.ress + ''
-          #  table.add_row(['🏚️'])
-          # table.add_row([texto_de_find])
-
-      #  print(table)
-      #   print("🔺- - - - - - - - - - - - - - - - -")
+          
