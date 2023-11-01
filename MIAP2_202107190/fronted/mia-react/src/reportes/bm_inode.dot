@@ -1,0 +1,79 @@
+digraph G {
+
+inodo_0 [shape=box,  label="login{'user': 'root', 'pass': '123', 'id': '190Disco0'}
+1100000\n0000000\n0000000\n0000000\n0000000\n0000000\n0000000"];
+
+inodo_1 [shape=box,  label="mkusr{'user': 'user1', 'pass': 'usuario', 'grp': 'root'}
+1100000\n0000000\n0000000\n0000000\n0000000\n0000000\n0000000"];
+
+inodo_2 [shape=box,  label="mkgrp{'name': 'usuarios'}
+1100000\n0000000\n0000000\n0000000\n0000000\n0000000\n0000000"];
+
+inodo_3 [shape=box,  label="mkgrp{'name': 'usuarios2'}
+1100000\n0000000\n0000000\n0000000\n0000000\n0000000\n0000000"];
+
+inodo_4 [shape=box,  label="mkgrp{'name': 'usuarios3'}
+1100000\n0000000\n0000000\n0000000\n0000000\n0000000\n0000000"];
+
+inodo_5 [shape=box,  label="mkgrp{'name': 'usuarios4'}
+1100000\n0000000\n0000000\n0000000\n0000000\n0000000\n0000000"];
+
+inodo_6 [shape=box,  label="mkgrp{'name': 'usuarios4'}
+1100000\n0000000\n0000000\n0000000\n0000000\n0000000\n0000000"];
+
+inodo_7 [shape=box,  label="mkusr{'user': 'mmds', 'pass': 'usuario', 'grp': 'usuarios4'}
+1100000\n0000000\n0000000\n0000000\n0000000\n0000000\n0000000"];
+
+inodo_8 [shape=box,  label="mkfile{'path': '/users.txt'}
+1100000\n0000000\n0000000\n0000000\n0000000\n0000000\n0000000"];
+
+inodo_9 [shape=box,  label="mkfile{'path': '/home/b2ble.txt', '-r': None, 'size': '1800'}
+1111000\n0000000\n0000000\n0000000\n0000000\n0000000\n0000000"];
+
+inodo_10 [shape=box,  label="mkfile{'path': '/home/b2ble.txt'}
+1111000\n0000000\n0000000\n0000000\n0000000\n0000000\n0000000"];
+
+inodo_11 [shape=box,  label="mkfile{'path': '/home/b2bl.txt'}
+1111100\n0000000\n0000000\n0000000\n0000000\n0000000\n0000000"];
+
+inodo_12 [shape=box,  label="mkfile{'path': '/home/b2bl.txt'}
+1111100\n0000000\n0000000\n0000000\n0000000\n0000000\n0000000"];
+
+inodo_13 [shape=box,  label="mkfile{'path': '/home/b2bl.txt', '-r': None}
+1111100\n0000000\n0000000\n0000000\n0000000\n0000000\n0000000"];
+
+inodo_14 [shape=box,  label="mkfile{'path': '/home/b2bl', '-r': None}
+1111110\n0000000\n0000000\n0000000\n0000000\n0000000\n0000000"];
+
+inodo_15 [shape=box,  label="mkfile{'path': '/home/bj2bl', '-r': None}
+1111111\n0000000\n0000000\n0000000\n0000000\n0000000\n0000000"];
+
+inodo_16 [shape=box,  label="mkfile{'path': '/home/bj2blh'}
+1111111\n1000000\n0000000\n0000000\n0000000\n0000000\n0000000"];
+
+inodo_17 [shape=box,  label="mkfile{'path': '/home/bj2blhm.txt'}
+1111111\n1100000\n0000000\n0000000\n0000000\n0000000\n0000000"];
+
+inodo_18 [shape=box,  label="mkfile{'path': '/home/bj2blhm.txt'}
+1111111\n1100000\n0000000\n0000000\n0000000\n0000000\n0000000"];
+
+inodo_0  -> inodo_1
+inodo_1  -> inodo_2
+inodo_2  -> inodo_3
+inodo_3  -> inodo_4
+inodo_4  -> inodo_5
+inodo_5  -> inodo_6
+inodo_6  -> inodo_7
+inodo_7  -> inodo_8
+inodo_8  -> inodo_9
+inodo_9  -> inodo_10
+inodo_10  -> inodo_11
+inodo_11  -> inodo_12
+inodo_12  -> inodo_13
+inodo_13  -> inodo_14
+inodo_14  -> inodo_15
+inodo_15  -> inodo_16
+inodo_16  -> inodo_17
+inodo_17  -> inodo_18
+inodo_18  -> inodo_19
+}

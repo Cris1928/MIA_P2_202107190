@@ -1,0 +1,124 @@
+digraph G {
+subgraph cluster_MBR0{ label = "MBR0"; color=blue; style=filled; fillcolor=lightblue; 
+
+1 [label=<<TABLE BORDER="0" CELLBORDER="2" CELLSPACING="0" CELLPADDING="5">
+<TR>
+<TD><B>Reporte_mbr</B></TD>
+<TD><B> </B></TD>
+</TR>
+<TR>
+<TD>mbr_tamano</TD>
+<TD>10485760</TD>
+</TR>
+<TR>
+<TD>mbr_fecha_creacion</TD>
+<TD>1698775571.9533358</TD>
+</TR>
+<TR>
+<TD>mbr_dsk_signature</TD>
+<TD>725663</TD>
+</TR>
+<TR>
+<TD>fit</TD>
+<TD>WF</TD>
+</TR>
+<TR>
+<TD><B>particion</B></TD>
+<TD><B>Primaria</B></TD>
+</TR>
+<TR>
+<TD><B>Nombre</B></TD>
+<TD><B>laprimera </B></TD>
+</TR>
+<TR>
+<TD><B>Inicio</B></TD>
+<TD><B>165 </B></TD>
+</TR>
+<TR>
+<TD><B>Size</B></TD>
+<TD><B>256000 </B></TD>
+</TR>
+<TR>
+<TD><B>Fit</B></TD>
+<TD><B>FF </B></TD>
+</TR>
+<TR>
+<TD><B>Status</B></TD>
+<TD><B>1 </B></TD>
+</TR>
+<TR>
+<TD><B>particion</B></TD>
+<TD><B>Primaria</B></TD>
+</TR>
+<TR>
+<TD><B>Nombre</B></TD>
+<TD><B>name_t </B></TD>
+</TR>
+<TR>
+<TD><B>Inicio</B></TD>
+<TD><B>153765 </B></TD>
+</TR>
+<TR>
+<TD><B>Size</B></TD>
+<TD><B>102400 </B></TD>
+</TR>
+<TR>
+<TD><B>Fit</B></TD>
+<TD><B>BF </B></TD>
+</TR>
+<TR>
+<TD><B>Status</B></TD>
+<TD><B>0 </B></TD>
+</TR>
+<TR>
+<TD><B>particion</B></TD>
+<TD><B>Primaria</B></TD>
+</TR>
+<TR>
+<TD><B>Nombre</B></TD>
+<TD><B>latercera </B></TD>
+</TR>
+<TR>
+<TD><B>Inicio</B></TD>
+<TD><B>256165 </B></TD>
+</TR>
+<TR>
+<TD><B>Size</B></TD>
+<TD><B>10240 </B></TD>
+</TR>
+<TR>
+<TD><B>Fit</B></TD>
+<TD><B>WF </B></TD>
+</TR>
+<TR>
+<TD><B>Status</B></TD>
+<TD><B>1 </B></TD>
+</TR>
+<TR>
+<TD><B>particion</B></TD>
+<TD><B>Primaria</B></TD>
+</TR>
+<TR>
+<TD><B>Nombre</B></TD>
+<TD><B>laacomodada </B></TD>
+</TR>
+<TR>
+<TD><B>Inicio</B></TD>
+<TD><B>266405 </B></TD>
+</TR>
+<TR>
+<TD><B>Size</B></TD>
+<TD><B>92160 </B></TD>
+</TR>
+<TR>
+<TD><B>Fit</B></TD>
+<TD><B>WF </B></TD>
+</TR>
+<TR>
+<TD><B>Status</B></TD>
+<TD><B>1 </B></TD>
+</TR>
+</TABLE>>shape=box];
+
+}
+}

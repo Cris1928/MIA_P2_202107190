@@ -1,0 +1,2 @@
+class publi:
+    ress=""

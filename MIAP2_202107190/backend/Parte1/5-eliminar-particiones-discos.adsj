@@ -1,0 +1,20 @@
+#ELIMINACION DE PARTICIONES PRIMARIAS
+fdisk -delete=full -name=Part2 -path=/home/daniel/Escritorio/MIAP1_202107190/tmp/d1.dsk
+
+#ELIMINACION DE PARTICIONES EXTENDIDAS
+fdisk -delete=full -name=Part1 -path=/home/daniel/Escritorio/MIAP1_202107190/tmp/d3.dsk
+
+#ELIMINACION DE PARTICIONES LOGICAS
+fdisk -delete=full -name=Part3 -path=/home/daniel/Escritorio/MIAP1_202107190/tmp/d2.dsk
+
+#Reporte disk despues de eliminar
+rep -id=190Disco0 -path=/home/daniel/Escritorio/MIAP1_202107190/tmp/d1.dsk -name=disk
+rep -id=190Disco1-path=/home/daniel/Escritorio/MIAP1_202107190/tmp/d2.dsk -name=disk
+rep -id=190Disco2-path=/home/daniel/Escritorio/MIAP1_202107190/tmp/d3.dsk -name=disk
+
+#ELIMINACION DE DISCOS
+
+#Debe de mostrar error por no existir
+rmdisk -path="/home/aeliminar disco/no_existo.dsk"
+rmdisk -path=/home/daniel/Escritorio/MIAP1_202107190/tmp/eliminar1.dsk
+rmdisk -path=/home/daniel/Escritorio/MIAP1_202107190/tmp/eliminar2.dsk

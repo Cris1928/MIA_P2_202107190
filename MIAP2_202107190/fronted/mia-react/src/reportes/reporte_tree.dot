@@ -1,0 +1,594 @@
+digraph G {
+
+subgraph cluster_Inode1441{ label = "Inode1441"; color=blue; style=filled; fillcolor=lightblue; 
+
+26 [label=<<TABLE BORDER="0" CELLBORDER="2" CELLSPACING="0" CELLPADDING="5">
+<TR>
+   <TD>Reporte_mbr</TD>
+   <TD> </TD>
+</TR>
+<TR>
+<TD>i_uid</TD>
+<TD>0</TD>
+</TR>
+<TR>
+<TD>I_gid</TD>
+<TD>0</TD>
+</TR>
+<TR>
+<TD>i_s</TD>
+<TD>0</TD>
+</TR>
+<TR>
+<TD>i_atime</TD>
+<TD>1698775588.424327</TD>
+</TR>
+<TR>
+<TD>i_ctime</TD>
+<TD>1698775588.4243293</TD>
+</TR>
+<TR>
+<TD>i_mtime</TD>
+<TD>1698775588.4243312</TD>
+</TR>
+<TR>
+<TD>i_type</TD>
+<TD>0</TD>
+</TR>
+<TR>
+<TD>i_perm</TD>
+<TD>0</TD>
+</TR>
+</TABLE>>shape=box];
+
+ node [shape=record];
+ bloques26 [label = "{<content0> 6733|<content1> 6989|<content2> -1|<content3> -1|<content4> -1|<content5> -1|<content6> -1|<content7> -1|<content8> -1|<content9> -1|<content10> -1|<content11> -1|<content12> -1|<content13> -1|<content14> -1|
+}"];
+}
+subgraph cluster_FolderBlock6733{ label = "FolderBlock6733"; color=blue; style=filled; fillcolor=lightblue; 
+
+ node [shape=record];
+ bloques27 [label = "{<content0> Name: users.txt
+ Inode: 1549|<content1> Name: name_t
+ Inode: -1|<content2> Name: name_t
+ Inode: -1|<content3> Name: name_t
+ Inode: -1|
+}"];
+}
+subgraph cluster_Inode1549{ label = "Inode1549"; color=blue; style=filled; fillcolor=lightblue; 
+
+28 [label=<<TABLE BORDER="0" CELLBORDER="2" CELLSPACING="0" CELLPADDING="5">
+<TR>
+   <TD>Reporte_mbr</TD>
+   <TD> </TD>
+</TR>
+<TR>
+<TD>i_uid</TD>
+<TD>0</TD>
+</TR>
+<TR>
+<TD>I_gid</TD>
+<TD>0</TD>
+</TR>
+<TR>
+<TD>i_s</TD>
+<TD>0</TD>
+</TR>
+<TR>
+<TD>i_atime</TD>
+<TD>1698775588.4244092</TD>
+</TR>
+<TR>
+<TD>i_ctime</TD>
+<TD>1698775588.42441</TD>
+</TR>
+<TR>
+<TD>i_mtime</TD>
+<TD>1698775588.424411</TD>
+</TR>
+<TR>
+<TD>i_type</TD>
+<TD>1</TD>
+</TR>
+<TR>
+<TD>i_perm</TD>
+<TD>0</TD>
+</TR>
+</TABLE>>shape=box];
+
+ node [shape=record];
+ bloques28 [label = "{<content0> 6797|<content1> 6861|<content2> 6925|<content3> -1|<content4> -1|<content5> -1|<content6> -1|<content7> -1|<content8> -1|<content9> -1|<content10> -1|<content11> -1|<content12> -1|<content13> -1|<content14> -1|
+}"];
+}
+subgraph cluster_FileBlock6797{ label = "FileBlock6797"; color=blue; style=filled; fillcolor=lightblue; 
+
+29 [label=<<TABLE BORDER="0" CELLBORDER="2" CELLSPACING="0" CELLPADDING="5">
+<TR>
+   <TD>Reporte_mbr</TD>
+   <TD> </TD>
+</TR>
+<TR>
+<TD>b_content</TD>
+<TD>1,G,root<BR/>1,U,root,root,123<BR/>1,U,root,user1,usuario<BR/>2,G,usuarios<BR/>3</TD>
+</TR>
+</TABLE>>shape=box];
+
+}
+bloques28:<content0> -> 29
+subgraph cluster_FileBlock6861{ label = "FileBlock6861"; color=blue; style=filled; fillcolor=lightblue; 
+
+30 [label=<<TABLE BORDER="0" CELLBORDER="2" CELLSPACING="0" CELLPADDING="5">
+<TR>
+   <TD>Reporte_mbr</TD>
+   <TD> </TD>
+</TR>
+<TR>
+<TD>b_content</TD>
+<TD>,G,usuarios2<BR/>4,G,usuarios3<BR/>5,G,usuarios4<BR/>5,U,usuarios4,mmds,usua</TD>
+</TR>
+</TABLE>>shape=box];
+
+}
+bloques28:<content1> -> 30
+subgraph cluster_FileBlock6925{ label = "FileBlock6925"; color=blue; style=filled; fillcolor=lightblue; 
+
+31 [label=<<TABLE BORDER="0" CELLBORDER="2" CELLSPACING="0" CELLPADDING="5">
+<TR>
+   <TD>Reporte_mbr</TD>
+   <TD> </TD>
+</TR>
+<TR>
+<TD>b_content</TD>
+<TD>rio<BR/></TD>
+</TR>
+</TABLE>>shape=box];
+
+}
+bloques28:<content2> -> 31
+bloques27:<content0> -> 28
+bloques26:<content0> -> bloques27
+subgraph cluster_FolderBlock6989{ label = "FolderBlock6989"; color=blue; style=filled; fillcolor=lightblue; 
+
+ node [shape=record];
+ bloques32 [label = "{<content0> Name: home
+ Inode: 1657|<content1> Name: name_t
+ Inode: -1|<content2> Name: name_t
+ Inode: -1|<content3> Name: name_t
+ Inode: -1|
+}"];
+}
+subgraph cluster_Inode1657{ label = "Inode1657"; color=blue; style=filled; fillcolor=lightblue; 
+
+33 [label=<<TABLE BORDER="0" CELLBORDER="2" CELLSPACING="0" CELLPADDING="5">
+<TR>
+   <TD>Reporte_mbr</TD>
+   <TD> </TD>
+</TR>
+<TR>
+<TD>i_uid</TD>
+<TD>1</TD>
+</TR>
+<TR>
+<TD>I_gid</TD>
+<TD>1</TD>
+</TR>
+<TR>
+<TD>i_s</TD>
+<TD>1800</TD>
+</TR>
+<TR>
+<TD>i_atime</TD>
+<TD>1698775601.7679484</TD>
+</TR>
+<TR>
+<TD>i_ctime</TD>
+<TD>1698775601.7679493</TD>
+</TR>
+<TR>
+<TD>i_mtime</TD>
+<TD>1698775601.7679503</TD>
+</TR>
+<TR>
+<TD>i_type</TD>
+<TD>0</TD>
+</TR>
+<TR>
+<TD>i_perm</TD>
+<TD>664</TD>
+</TR>
+</TABLE>>shape=box];
+
+ node [shape=record];
+ bloques33 [label = "{<content0> 7053|<content1> 7117|<content2> 7181|<content3> 7245|<content4> 7373|<content5> 7501|<content6> 7629|<content7> -1|<content8> -1|<content9> -1|<content10> -1|<content11> -1|<content12> -1|<content13> -1|<content14> -1|
+}"];
+}
+subgraph cluster_FolderBlock7053{ label = "FolderBlock7053"; color=blue; style=filled; fillcolor=lightblue; 
+
+ node [shape=record];
+ bloques34 [label = "{<content0> Name: name_t
+ Inode: -1|<content1> Name: name_t
+ Inode: -1|<content2> Name: name_t
+ Inode: -1|<content3> Name: name_t
+ Inode: -1|
+}"];
+}
+bloques33:<content0> -> bloques34
+subgraph cluster_FolderBlock7117{ label = "FolderBlock7117"; color=blue; style=filled; fillcolor=lightblue; 
+
+ node [shape=record];
+ bloques35 [label = "{<content0> Name: b2ble.txt
+ Inode: 1765|<content1> Name: name_t
+ Inode: -1|<content2> Name: name_t
+ Inode: -1|<content3> Name: name_t
+ Inode: -1|
+}"];
+}
+subgraph cluster_Inode1765{ label = "Inode1765"; color=blue; style=filled; fillcolor=lightblue; 
+
+36 [label=<<TABLE BORDER="0" CELLBORDER="2" CELLSPACING="0" CELLPADDING="5">
+<TR>
+   <TD>Reporte_mbr</TD>
+   <TD> </TD>
+</TR>
+<TR>
+<TD>i_uid</TD>
+<TD>1</TD>
+</TR>
+<TR>
+<TD>I_gid</TD>
+<TD>1</TD>
+</TR>
+<TR>
+<TD>i_s</TD>
+<TD>1800</TD>
+</TR>
+<TR>
+<TD>i_atime</TD>
+<TD>1698775601.7700875</TD>
+</TR>
+<TR>
+<TD>i_ctime</TD>
+<TD>1698775601.7700884</TD>
+</TR>
+<TR>
+<TD>i_mtime</TD>
+<TD>1698775601.7700891</TD>
+</TR>
+<TR>
+<TD>i_type</TD>
+<TD>1</TD>
+</TR>
+<TR>
+<TD>i_perm</TD>
+<TD>664</TD>
+</TR>
+</TABLE>>shape=box];
+
+ node [shape=record];
+ bloques36 [label = "{<content0> -1|<content1> -1|<content2> -1|<content3> -1|<content4> -1|<content5> -1|<content6> -1|<content7> -1|<content8> -1|<content9> -1|<content10> -1|<content11> -1|<content12> -1|<content13> -1|<content14> -1|
+}"];
+}
+bloques35:<content0> -> 36
+bloques33:<content1> -> bloques35
+subgraph cluster_FolderBlock7181{ label = "FolderBlock7181"; color=blue; style=filled; fillcolor=lightblue; 
+
+ node [shape=record];
+ bloques37 [label = "{<content0> Name: b2bl.txt
+ Inode: 1873|<content1> Name: name_t
+ Inode: -1|<content2> Name: name_t
+ Inode: -1|<content3> Name: name_t
+ Inode: -1|
+}"];
+}
+subgraph cluster_Inode1873{ label = "Inode1873"; color=blue; style=filled; fillcolor=lightblue; 
+
+38 [label=<<TABLE BORDER="0" CELLBORDER="2" CELLSPACING="0" CELLPADDING="5">
+<TR>
+   <TD>Reporte_mbr</TD>
+   <TD> </TD>
+</TR>
+<TR>
+<TD>i_uid</TD>
+<TD>1</TD>
+</TR>
+<TR>
+<TD>I_gid</TD>
+<TD>1</TD>
+</TR>
+<TR>
+<TD>i_s</TD>
+<TD>0</TD>
+</TR>
+<TR>
+<TD>i_atime</TD>
+<TD>1698775748.5138423</TD>
+</TR>
+<TR>
+<TD>i_ctime</TD>
+<TD>1698775748.5138435</TD>
+</TR>
+<TR>
+<TD>i_mtime</TD>
+<TD>1698775748.5138445</TD>
+</TR>
+<TR>
+<TD>i_type</TD>
+<TD>1</TD>
+</TR>
+<TR>
+<TD>i_perm</TD>
+<TD>664</TD>
+</TR>
+</TABLE>>shape=box];
+
+ node [shape=record];
+ bloques38 [label = "{<content0> -1|<content1> -1|<content2> -1|<content3> -1|<content4> -1|<content5> -1|<content6> -1|<content7> -1|<content8> -1|<content9> -1|<content10> -1|<content11> -1|<content12> -1|<content13> -1|<content14> -1|
+}"];
+}
+bloques37:<content0> -> 38
+bloques33:<content2> -> bloques37
+subgraph cluster_FolderBlock7245{ label = "FolderBlock7245"; color=blue; style=filled; fillcolor=lightblue; 
+
+ node [shape=record];
+ bloques39 [label = "{<content0> Name: b2bl
+ Inode: 1981|<content1> Name: name_t
+ Inode: -1|<content2> Name: name_t
+ Inode: -1|<content3> Name: name_t
+ Inode: -1|
+}"];
+}
+subgraph cluster_Inode1981{ label = "Inode1981"; color=blue; style=filled; fillcolor=lightblue; 
+
+40 [label=<<TABLE BORDER="0" CELLBORDER="2" CELLSPACING="0" CELLPADDING="5">
+<TR>
+   <TD>Reporte_mbr</TD>
+   <TD> </TD>
+</TR>
+<TR>
+<TD>i_uid</TD>
+<TD>1</TD>
+</TR>
+<TR>
+<TD>I_gid</TD>
+<TD>1</TD>
+</TR>
+<TR>
+<TD>i_s</TD>
+<TD>0</TD>
+</TR>
+<TR>
+<TD>i_atime</TD>
+<TD>1698776010.1561303</TD>
+</TR>
+<TR>
+<TD>i_ctime</TD>
+<TD>1698776010.1561317</TD>
+</TR>
+<TR>
+<TD>i_mtime</TD>
+<TD>1698776010.1561327</TD>
+</TR>
+<TR>
+<TD>i_type</TD>
+<TD>0</TD>
+</TR>
+<TR>
+<TD>i_perm</TD>
+<TD>664</TD>
+</TR>
+</TABLE>>shape=box];
+
+ node [shape=record];
+ bloques40 [label = "{<content0> 7309|<content1> -1|<content2> -1|<content3> -1|<content4> -1|<content5> -1|<content6> -1|<content7> -1|<content8> -1|<content9> -1|<content10> -1|<content11> -1|<content12> -1|<content13> -1|<content14> -1|
+}"];
+}
+subgraph cluster_FolderBlock7309{ label = "FolderBlock7309"; color=blue; style=filled; fillcolor=lightblue; 
+
+ node [shape=record];
+ bloques41 [label = "{<content0> Name: name_t
+ Inode: -1|<content1> Name: name_t
+ Inode: -1|<content2> Name: name_t
+ Inode: -1|<content3> Name: name_t
+ Inode: -1|
+}"];
+}
+bloques40:<content0> -> bloques41
+bloques39:<content0> -> 40
+bloques33:<content3> -> bloques39
+subgraph cluster_FolderBlock7373{ label = "FolderBlock7373"; color=blue; style=filled; fillcolor=lightblue; 
+
+ node [shape=record];
+ bloques42 [label = "{<content0> Name: bj2bl
+ Inode: 2089|<content1> Name: name_t
+ Inode: -1|<content2> Name: name_t
+ Inode: -1|<content3> Name: name_t
+ Inode: -1|
+}"];
+}
+subgraph cluster_Inode2089{ label = "Inode2089"; color=blue; style=filled; fillcolor=lightblue; 
+
+43 [label=<<TABLE BORDER="0" CELLBORDER="2" CELLSPACING="0" CELLPADDING="5">
+<TR>
+   <TD>Reporte_mbr</TD>
+   <TD> </TD>
+</TR>
+<TR>
+<TD>i_uid</TD>
+<TD>1</TD>
+</TR>
+<TR>
+<TD>I_gid</TD>
+<TD>1</TD>
+</TR>
+<TR>
+<TD>i_s</TD>
+<TD>0</TD>
+</TR>
+<TR>
+<TD>i_atime</TD>
+<TD>1698776027.9503367</TD>
+</TR>
+<TR>
+<TD>i_ctime</TD>
+<TD>1698776027.9503381</TD>
+</TR>
+<TR>
+<TD>i_mtime</TD>
+<TD>1698776027.950339</TD>
+</TR>
+<TR>
+<TD>i_type</TD>
+<TD>0</TD>
+</TR>
+<TR>
+<TD>i_perm</TD>
+<TD>664</TD>
+</TR>
+</TABLE>>shape=box];
+
+ node [shape=record];
+ bloques43 [label = "{<content0> 7437|<content1> -1|<content2> -1|<content3> -1|<content4> -1|<content5> -1|<content6> -1|<content7> -1|<content8> -1|<content9> -1|<content10> -1|<content11> -1|<content12> -1|<content13> -1|<content14> -1|
+}"];
+}
+subgraph cluster_FolderBlock7437{ label = "FolderBlock7437"; color=blue; style=filled; fillcolor=lightblue; 
+
+ node [shape=record];
+ bloques44 [label = "{<content0> Name: name_t
+ Inode: -1|<content1> Name: name_t
+ Inode: -1|<content2> Name: name_t
+ Inode: -1|<content3> Name: name_t
+ Inode: -1|
+}"];
+}
+bloques43:<content0> -> bloques44
+bloques42:<content0> -> 43
+bloques33:<content4> -> bloques42
+subgraph cluster_FolderBlock7501{ label = "FolderBlock7501"; color=blue; style=filled; fillcolor=lightblue; 
+
+ node [shape=record];
+ bloques45 [label = "{<content0> Name: bj2blh
+ Inode: 2197|<content1> Name: name_t
+ Inode: -1|<content2> Name: name_t
+ Inode: -1|<content3> Name: name_t
+ Inode: -1|
+}"];
+}
+subgraph cluster_Inode2197{ label = "Inode2197"; color=blue; style=filled; fillcolor=lightblue; 
+
+46 [label=<<TABLE BORDER="0" CELLBORDER="2" CELLSPACING="0" CELLPADDING="5">
+<TR>
+   <TD>Reporte_mbr</TD>
+   <TD> </TD>
+</TR>
+<TR>
+<TD>i_uid</TD>
+<TD>1</TD>
+</TR>
+<TR>
+<TD>I_gid</TD>
+<TD>1</TD>
+</TR>
+<TR>
+<TD>i_s</TD>
+<TD>0</TD>
+</TR>
+<TR>
+<TD>i_atime</TD>
+<TD>1698776042.5529284</TD>
+</TR>
+<TR>
+<TD>i_ctime</TD>
+<TD>1698776042.5529299</TD>
+</TR>
+<TR>
+<TD>i_mtime</TD>
+<TD>1698776042.5529308</TD>
+</TR>
+<TR>
+<TD>i_type</TD>
+<TD>0</TD>
+</TR>
+<TR>
+<TD>i_perm</TD>
+<TD>664</TD>
+</TR>
+</TABLE>>shape=box];
+
+ node [shape=record];
+ bloques46 [label = "{<content0> 7565|<content1> -1|<content2> -1|<content3> -1|<content4> -1|<content5> -1|<content6> -1|<content7> -1|<content8> -1|<content9> -1|<content10> -1|<content11> -1|<content12> -1|<content13> -1|<content14> -1|
+}"];
+}
+subgraph cluster_FolderBlock7565{ label = "FolderBlock7565"; color=blue; style=filled; fillcolor=lightblue; 
+
+ node [shape=record];
+ bloques47 [label = "{<content0> Name: name_t
+ Inode: -1|<content1> Name: name_t
+ Inode: -1|<content2> Name: name_t
+ Inode: -1|<content3> Name: name_t
+ Inode: -1|
+}"];
+}
+bloques46:<content0> -> bloques47
+bloques45:<content0> -> 46
+bloques33:<content5> -> bloques45
+subgraph cluster_FolderBlock7629{ label = "FolderBlock7629"; color=blue; style=filled; fillcolor=lightblue; 
+
+ node [shape=record];
+ bloques48 [label = "{<content0> Name: bj2blhm.txt
+ Inode: 2305|<content1> Name: name_t
+ Inode: -1|<content2> Name: name_t
+ Inode: -1|<content3> Name: name_t
+ Inode: -1|
+}"];
+}
+subgraph cluster_Inode2305{ label = "Inode2305"; color=blue; style=filled; fillcolor=lightblue; 
+
+49 [label=<<TABLE BORDER="0" CELLBORDER="2" CELLSPACING="0" CELLPADDING="5">
+<TR>
+   <TD>Reporte_mbr</TD>
+   <TD> </TD>
+</TR>
+<TR>
+<TD>i_uid</TD>
+<TD>1</TD>
+</TR>
+<TR>
+<TD>I_gid</TD>
+<TD>1</TD>
+</TR>
+<TR>
+<TD>i_s</TD>
+<TD>0</TD>
+</TR>
+<TR>
+<TD>i_atime</TD>
+<TD>1698776071.933899</TD>
+</TR>
+<TR>
+<TD>i_ctime</TD>
+<TD>1698776071.9339004</TD>
+</TR>
+<TR>
+<TD>i_mtime</TD>
+<TD>1698776071.933901</TD>
+</TR>
+<TR>
+<TD>i_type</TD>
+<TD>1</TD>
+</TR>
+<TR>
+<TD>i_perm</TD>
+<TD>664</TD>
+</TR>
+</TABLE>>shape=box];
+
+ node [shape=record];
+ bloques49 [label = "{<content0> -1|<content1> -1|<content2> -1|<content3> -1|<content4> -1|<content5> -1|<content6> -1|<content7> -1|<content8> -1|<content9> -1|<content10> -1|<content11> -1|<content12> -1|<content13> -1|<content14> -1|
+}"];
+}
+bloques48:<content0> -> 49
+bloques33:<content6> -> bloques48
+bloques32:<content0> -> 33
+bloques26:<content1> -> bloques32
+home -> 26
+}
